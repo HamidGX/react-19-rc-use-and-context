@@ -2,6 +2,7 @@
 import { use } from 'react' // This error is expected because the "react" module does not have an exported member called 'use'.
 
 import ThemeContext from '../context/theme-context.tsx'
+import { ThemeProps } from '../lib/types.ts'
 
 export default function Heading({ children }: { children: React.ReactNode }) {
 	if (children == null) {
@@ -20,7 +21,7 @@ export default function Heading({ children }: { children: React.ReactNode }) {
 		)
 	}
 
-	const theme = use(ThemeContext)
+	const theme: ThemeProps = use(ThemeContext)
 	return (
 		<div
 			style={{
